@@ -1,0 +1,11 @@
+npm init
+npm install express multer cors
+npm install nodemon
+
+
+npm create vite@latest
+npm install
+npm install axios
+
+
+npm install ip // check if it works before
