@@ -38,13 +38,39 @@ app.get('/download/:filename', (req, res) => {
     res.download(filePath);
 });
 
+
+
+
+// Add this to your existing Express server code
+
+// Endpoint to list files in the uploads directory
+app.get('/files', (req, res) => {
+    const directoryPath = path.join(__dirname, 'uploads');
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            return res.status(500).send('Unable to scan directory');
+        }
+        res.json(files);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 app.get('/', function (req, res) {
     res.json({ message: "Hello chai aur code" })
 })
 
 app.get('/express', (req, res) => {
     res.send('Hello World!')
-  })
+})
 
 // Start server
 // app.listen(PORT, () => {
