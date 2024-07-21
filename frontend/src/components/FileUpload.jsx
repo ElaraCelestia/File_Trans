@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const FileUpload = () => {
+const FileUpload = ({ onUpload }) => {
     const [file, setFile] = useState(null);
 
     const handleFileChange = (e) => {
@@ -21,6 +21,7 @@ const FileUpload = () => {
             });
             console.log(response.data);
             alert('File uploaded successfully');
+            onUpload(); // Call the onUpload function to trigger a refresh
         } catch (error) {
             console.error('Error uploading file:', error);
             alert('File upload failed');
