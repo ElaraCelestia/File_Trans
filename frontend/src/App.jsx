@@ -3,6 +3,7 @@ import FileUpload from './components/FileUpload';
 import FileDownload from './components/FileDownload';
 import FileList from './components/FileList';
 import FileSearch from './components/FileSearch';
+import LocalIP from './components/LocalIp';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <>
             <div className="App">
                 <h1>File Upload and Download</h1>
+                <LocalIP />
                 <FileUpload onUpload={handleUpload} />
                 <FileSearch onSearch={handleSearch} />
                 <FileDownload />

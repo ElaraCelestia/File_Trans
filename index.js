@@ -59,9 +59,16 @@ app.get('/files', (req, res) => {
 
 
 
+//####################################################################
+// Endpoint to get local IP address
+const  getLocalIP = require('./getLocalIp');
 
-
-
+app.get('/local-ip', (req, res) => {
+    const localIP = getLocalIP();
+    //res.json({ Ip: localIP, port: PORT });
+    res.json({ localIP });
+});
+//####################################################################
 
 
 
@@ -81,5 +88,5 @@ app.get('/express', (req, res) => {
 
 // this will listen on all network interfaces
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}...`);
 });
